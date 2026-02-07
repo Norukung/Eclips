@@ -1,0 +1,40 @@
+package Lab07;
+
+public class SmartPhone extends Phone{
+	private String cpu;
+
+	public SmartPhone(String model, int price, String cpu) {
+		super(model, price);
+		this.cpu = cpu;
+	}
+	
+
+	public SmartPhone(String cpu) {
+		super();
+		setCpu(cpu);
+	}
+
+	public String getCpu() {
+		return cpu;
+	}
+
+	public void setCpu(String cpu) {
+		if(cpu == null || cpu.isEmpty()) {
+			System.out.println("CPU name cannot be empty.");
+			if(this.cpu == null) {
+				this.cpu = "Undefined cpu";
+			}
+		}else {
+		this.cpu = cpu;}
+	}
+	
+	public float getPaymentPerMonth(int month) {
+		return price/month;
+	}
+
+	@Override
+	public String toString() {
+		return "SmartPhone [model=" + model + ", price=" + price + ", cpu=" + cpu + "]";
+	}
+	
+}
