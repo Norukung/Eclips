@@ -1,0 +1,48 @@
+package Lab07;
+
+public class Phone {
+	protected String model;
+	protected int price;
+	public String getModel() {
+		return model;
+	}
+	
+	public void setModel(String model) {
+		if(null == model || model.isEmpty()) {
+			System.out.println("Model name cannot be empty.");
+			if(this.model == null) {
+				this.model = "Undefined model";
+			}
+		}else {
+			this.model = model;}
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+	
+	public void setPrice(int price) {
+		if(price<0) {
+		System.out.println("Price cannot less than 0.");
+		}else {
+			this.price = price;
+		}
+	}
+	
+	public Phone(String model, int price) {
+		super();
+		setModel(model);
+		setPrice(price);
+		
+	}
+	
+	public Phone() {
+		setModel(model);
+		setPrice(price);
+	}
+	
+	@Override
+	public String toString() {
+		return "Phone [model=" + model + ", price=" + price + "]";
+	}
+}
