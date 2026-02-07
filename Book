@@ -1,0 +1,49 @@
+package LabRe07;
+
+public class Book {
+	protected String title;
+	protected String publisher;
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		if(null ==  title || title.isEmpty()) {
+			System.out.println("Title cannot be empty.");
+			if(this.title == null) {
+				this.title = "Undefined title";
+			}	
+		}else {
+			this.title = title;
+		}
+	}
+	
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		if(null ==  publisher || publisher.isEmpty()) {
+			System.out.println("publisher cannot be empty.");
+			if(this.publisher == null) {
+				this.publisher = "Undefined publisher";
+			}	
+		}else {
+			this.publisher = publisher;
+		}
+	}
+	public Book(String title, String publisher) {
+		setTitle(title);
+		setPublisher(publisher);
+	}
+	
+	public Book() {
+		setTitle(title);
+		setPublisher(publisher);
+	}
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", publisher=" + publisher + "]";
+	}
+	
+
+}
